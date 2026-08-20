@@ -1,0 +1,33 @@
+
+Summary of tcp_4up test run from 2026-08-16 17:54:39
+  Title: 'cubic tcp_4up run 1'
+
+                                             avg       median       99th %          # data pts
+ Ping (ms) ICMP                   :        16.60        16.00        40.90 ms              350
+ TCP upload avg                   :        64.09          N/A          N/A Mbits/s         350
+ TCP upload fairness              :         1.00          N/A          N/A Mbits/s         350
+ TCP upload sum                   :       256.34          N/A          N/A Mbits/s         350
+ TCP upload::1                    :        63.83        64.07        77.01 Mbits/s         350
+ TCP upload::1::tcp_cwnd          :        81.00        81.00        81.00                 228
+ TCP upload::1::tcp_delivery_rate :        66.99        66.05        92.56                 228
+ TCP upload::1::tcp_pacing_rate   :       168.11       162.18       239.78                 228
+ TCP upload::1::tcp_rtt           :         7.01         7.00         9.68                 228
+ TCP upload::1::tcp_rtt_var       :         0.20         0.17         0.72                 228
+ TCP upload::2                    :        64.28        64.55        74.43 Mbits/s         350
+ TCP upload::2::tcp_cwnd          :        76.00        76.00        76.00                 228
+ TCP upload::2::tcp_delivery_rate :        67.07        65.17        98.14                 228
+ TCP upload::2::tcp_pacing_rate   :       160.62       154.18       243.72                 228
+ TCP upload::2::tcp_rtt           :         6.94         6.91         9.45                 228
+ TCP upload::2::tcp_rtt_var       :         0.20         0.15         0.78                 228
+ TCP upload::3                    :        64.26        64.59        79.78 Mbits/s         350
+ TCP upload::3::tcp_cwnd          :        99.00        99.00        99.00                 228
+ TCP upload::3::tcp_delivery_rate :        67.08        65.96        98.19                 228
+ TCP upload::3::tcp_pacing_rate   :       205.93       200.19       347.23                 228
+ TCP upload::3::tcp_rtt           :         6.96         6.92         9.45                 228
+ TCP upload::3::tcp_rtt_var       :         0.22         0.17         1.08                 228
+ TCP upload::4                    :        63.97        63.74        75.15 Mbits/s         350
+ TCP upload::4::tcp_cwnd          :        46.88        47.00        47.00                 228
+ TCP upload::4::tcp_delivery_rate :        65.90        65.56        89.49                 228
+ TCP upload::4::tcp_pacing_rate   :        97.57        95.49       158.95                 228
+ TCP upload::4::tcp_rtt           :         6.96         6.89         9.65                 227
+ TCP upload::4::tcp_rtt_var       :         0.21         0.16         0.79                 227

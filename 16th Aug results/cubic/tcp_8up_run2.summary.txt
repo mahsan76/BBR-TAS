@@ -1,0 +1,57 @@
+
+Summary of tcp_8up test run from 2026-08-16 18:00:59
+  Title: 'cubic tcp_8up run 2'
+
+                                             avg       median       99th %          # data pts
+ Ping (ms) ICMP                   :        22.30        22.65        46.40 ms              350
+ TCP upload avg                   :        34.02          N/A          N/A Mbits/s         350
+ TCP upload fairness              :         1.00          N/A          N/A Mbits/s         350
+ TCP upload sum                   :       272.16          N/A          N/A Mbits/s         350
+ TCP upload::1                    :        33.60        33.56        39.78 Mbits/s         350
+ TCP upload::1::tcp_cwnd          :       100.00       100.00       100.00                 218
+ TCP upload::1::tcp_delivery_rate :        35.35        35.42        43.85                 218
+ TCP upload::1::tcp_pacing_rate   :       113.04       104.05       140.63                 218
+ TCP upload::1::tcp_rtt           :        13.48        13.45        17.23                 218
+ TCP upload::1::tcp_rtt_var       :         0.27         0.20         1.13                 218
+ TCP upload::2                    :        33.22        33.20        41.36 Mbits/s         350
+ TCP upload::2::tcp_cwnd          :        68.00        68.00        68.00                 218
+ TCP upload::2::tcp_delivery_rate :        38.49        35.22        49.60                 218
+ TCP upload::2::tcp_pacing_rate   :        86.95        70.88        95.72                 218
+ TCP upload::2::tcp_rtt           :        13.57        13.45        17.76                 218
+ TCP upload::2::tcp_rtt_var       :         0.30         0.19         1.31                 218
+ TCP upload::3                    :        34.38        34.66        40.16 Mbits/s         350
+ TCP upload::3::tcp_cwnd          :        85.00        85.00        85.00                 218
+ TCP upload::3::tcp_delivery_rate :        35.88        35.45        49.72                 218
+ TCP upload::3::tcp_pacing_rate   :        92.95        87.79       119.90                 218
+ TCP upload::3::tcp_rtt           :        13.54        13.57        17.35                 218
+ TCP upload::3::tcp_rtt_var       :         0.25         0.17         1.18                 218
+ TCP upload::4                    :        33.51        33.61        39.18 Mbits/s         350
+ TCP upload::4::tcp_cwnd          :        67.00        67.00        67.00                 218
+ TCP upload::4::tcp_delivery_rate :        34.45        35.20        44.53                 218
+ TCP upload::4::tcp_pacing_rate   :        74.27        69.44        88.91                 218
+ TCP upload::4::tcp_rtt           :        13.58        13.52        17.64                 218
+ TCP upload::4::tcp_rtt_var       :         0.28         0.19         1.14                 218
+ TCP upload::5                    :        33.20        33.18        39.45 Mbits/s         350
+ TCP upload::5::tcp_cwnd          :        99.00        99.00        99.00                 218
+ TCP upload::5::tcp_delivery_rate :        36.30        35.36        47.07                 218
+ TCP upload::5::tcp_pacing_rate   :       114.23       103.45       134.54                 218
+ TCP upload::5::tcp_rtt           :        13.56        13.41        17.57                 218
+ TCP upload::5::tcp_rtt_var       :         0.34         0.23         1.56                 218
+ TCP upload::6                    :        34.40        34.87        40.58 Mbits/s         350
+ TCP upload::6::tcp_cwnd          :        80.00        80.00        80.00                 218
+ TCP upload::6::tcp_delivery_rate :        36.50        35.08        49.76                 218
+ TCP upload::6::tcp_pacing_rate   :        86.17        82.61       114.66                 218
+ TCP upload::6::tcp_rtt           :        13.66        13.58        17.92                 217
+ TCP upload::6::tcp_rtt_var       :         0.25         0.17         1.43                 217
+ TCP upload::7                    :        34.60        35.11        39.89 Mbits/s         350
+ TCP upload::7::tcp_cwnd          :        46.83        47.00        47.00                 218
+ TCP upload::7::tcp_delivery_rate :        34.54        35.23        43.51                 217
+ TCP upload::7::tcp_pacing_rate   :        48.91        48.98        61.90                 217
+ TCP upload::7::tcp_rtt           :        13.63        13.45        17.55                 216
+ TCP upload::7::tcp_rtt_var       :         0.33         0.20         1.53                 216
+ TCP upload::8                    :        35.25        35.17        40.95 Mbits/s         350
+ TCP upload::8::tcp_cwnd          :        46.83        47.00        47.00                 218
+ TCP upload::8::tcp_delivery_rate :        35.41        35.57        44.51                 217
+ TCP upload::8::tcp_pacing_rate   :        48.73        48.69        62.40                 217
+ TCP upload::8::tcp_rtt           :        13.69        13.51        17.55                 217
+ TCP upload::8::tcp_rtt_var       :         0.29         0.20         1.39                 217

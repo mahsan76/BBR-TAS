@@ -1,0 +1,72 @@
+Warning: Totals are computed as cumulative sum * step size,
+so spurious values wreck havoc with the results.
+Results 2026-08-16 13:13:43.251839 - cubic tcp_upload run 5:
+ Ping (ms) ICMP:
+  Data points: 350
+  Min:         2.860000 ms
+  Median:      8.280000 ms
+  99th %:      16.453000 ms
+  Max:         114.000000 ms
+  Mean:        8.880000 ms
+  Std dev:     6.238156
+  Variance:    38.914596
+ TCP upload:
+  Data points: 350
+  Total:       13415.718930 Mbits
+  Min:         103.790000 Mbits/s
+  Median:      224.580000 Mbits/s
+  99th %:      266.426400 Mbits/s
+  Max:         288.860000 Mbits/s
+  Mean:        223.490000 Mbits/s
+  Std dev:     20.406684
+  Variance:    416.432733
+ TCP upload::tcp_cwnd:
+  Data points: 201
+  Total:       3480.000000 
+  Min:         58.000000 
+  Median:      58.000000 
+  99th %:      58.000000 
+  Max:         58.000000 
+  Mean:        58.000000 
+  Std dev:     0.000000
+  Variance:    0.000000
+ TCP upload::tcp_delivery_rate:
+  Data points: 201
+  Total:       14625.978445 
+  Min:         76.372072 
+  Median:      209.575488 
+  99th %:      794.312208 
+  Max:         1124.472048 
+  Mean:        242.493599 
+  Std dev:     131.097276
+  Variance:    17186.495767
+ TCP upload::tcp_pacing_rate:
+  Data points: 201
+  Total:       34282.418475 
+  Min:         158.523432 
+  Median:      461.268456 
+  99th %:      2452.271488 
+  Max:         3589.086088 
+  Mean:        571.254186 
+  Std dev:     389.059436
+  Variance:    151367.244557
+ TCP upload::tcp_rtt:
+  Data points: 201
+  Total:       104.237310 
+  Min:         0.226000 
+  Median:      1.728000 
+  99th %:      3.091000 
+  Max:         5.128000 
+  Mean:        1.733075 
+  Std dev:     0.635490
+  Variance:    0.403848
+ TCP upload::tcp_rtt_var:
+  Data points: 201
+  Total:       10.677676 
+  Min:         0.016000 
+  Median:      0.158000 
+  99th %:      0.530000 
+  Max:         1.186000 
+  Mean:        0.179114 
+  Std dev:     0.121051
+  Variance:    0.014653

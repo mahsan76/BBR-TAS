@@ -1,0 +1,43 @@
+
+Summary of rrul test run from 2026-08-16 18:02:15
+  Title: 'cubic rrul run 2'
+
+                                              avg       median       99th %          # data pts
+ Ping (ms) ICMP                    :       278.00       301.50       517.02 ms              350
+ Ping (ms) UDP BE                  :       280.28       301.67       516.24 ms              350
+ Ping (ms) UDP BK                  :       302.54       333.43       538.99 ms              350
+ Ping (ms) UDP EF                  :       270.42       289.81       514.34 ms              350
+ Ping (ms) avg                     :       282.81          N/A          N/A ms              350
+ TCP download BE                   :        48.99        48.44        98.76 Mbits/s         350
+ TCP download BK                   :        67.42        68.13       138.76 Mbits/s         350
+ TCP download CS5                  :        73.19        70.25       158.98 Mbits/s         350
+ TCP download EF                   :        78.93        76.96       161.33 Mbits/s         350
+ TCP download avg                  :        67.13          N/A          N/A Mbits/s         350
+ TCP download sum                  :       268.53          N/A          N/A Mbits/s         350
+ TCP totals                        :       390.05          N/A          N/A Mbits/s         350
+ TCP upload BE                     :        21.91        20.10        55.23 Mbits/s         350
+ TCP upload BE::tcp_cwnd           :        46.33        46.00        47.00                 218
+ TCP upload BE::tcp_delivery_rate  :       309.18       202.36      1335.26                 218
+ TCP upload BE::tcp_pacing_rate    :       853.52       678.15      2700.89                 218
+ TCP upload BE::tcp_rtt            :         1.57         0.96         6.52                 218
+ TCP upload BE::tcp_rtt_var        :         0.21         0.15         0.98                 218
+ TCP upload BK                     :        39.40        42.43        84.21 Mbits/s         350
+ TCP upload BK::tcp_cwnd           :        87.96        88.00        89.00                 218
+ TCP upload BK::tcp_delivery_rate  :       329.31       205.96      1467.11                 218
+ TCP upload BK::tcp_pacing_rate    :      1775.41      1170.43      6800.78                 218
+ TCP upload BK::tcp_rtt            :         1.45         1.05         5.63                 218
+ TCP upload BK::tcp_rtt_var        :         0.19         0.13         1.14                 218
+ TCP upload CS5                    :        31.09        29.82        68.98 Mbits/s         350
+ TCP upload CS5::tcp_cwnd          :        97.18        99.00        99.00                 218
+ TCP upload CS5::tcp_delivery_rate :       362.46       313.88      1053.56                 218
+ TCP upload CS5::tcp_pacing_rate   :      2202.95      1987.72      5941.95                 218
+ TCP upload CS5::tcp_rtt           :         1.21         0.68         6.00                 218
+ TCP upload CS5::tcp_rtt_var       :         0.17         0.10         0.96                 218
+ TCP upload EF                     :        29.12        29.02        63.04 Mbits/s         350
+ TCP upload EF::tcp_cwnd           :        77.55        78.00        78.00                 218
+ TCP upload EF::tcp_delivery_rate  :       383.51       299.03      1383.24                 218
+ TCP upload EF::tcp_pacing_rate    :      1764.46      1601.41      4865.05                 218
+ TCP upload EF::tcp_rtt            :         1.18         0.68         5.71                 218
+ TCP upload EF::tcp_rtt_var        :         0.17         0.10         0.95                 218
+ TCP upload avg                    :        30.38          N/A          N/A Mbits/s         350
+ TCP upload sum                    :       121.52          N/A          N/A Mbits/s         350
