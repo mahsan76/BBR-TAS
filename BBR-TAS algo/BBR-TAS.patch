@@ -1,0 +1,102 @@
+diff --git a/tcp_bvr.c b/tcp_tas.c
+old mode 100755
+new mode 100755
+index b2d3bc4..c1a9f7e
+--- a/tcp_bvr.c
++++ b/tcp_tas.c
+@@ -84,8 +84,23 @@
+ 
+ #define BBR_SCALE 8	/* scaling factor for fractions in BBR (e.g. gains) */
+ #define BBR_UNIT (1 << BBR_SCALE)
+-#define BBR_FC_PACING_SHIFT_STARTUP   9   /* STARTUP: ~2x burst for A-MPDU fill */
+-#define BBR_FC_PACING_SHIFT_STEADY   10   /* steady-state: TCP/BBRv3 default     */
++
++/*
++ * BBR-TAS: TSQ-Adaptive pacing Shift.
++ * The shift values below are exposed as module parameters instead of
++ * compile-time constants so that a factorial sweep of
++ * (startup_shift, steady_shift) pairs can be driven from user space
++ * with modprobe/insmod, without rebuilding the module between runs.
++ * Defaults reproduce the BBR-BVR baseline (9, 10).
++ */
++static int tas_pacing_shift_startup = 9;
++static int tas_pacing_shift_steady  = 10;
++module_param(tas_pacing_shift_startup, int, 0644);
++MODULE_PARM_DESC(tas_pacing_shift_startup,
++		  "TSQ pacing shift used during STARTUP and DRAIN");
++module_param(tas_pacing_shift_steady, int, 0644);
++MODULE_PARM_DESC(tas_pacing_shift_steady,
++		  "TSQ pacing shift used during ProbeBW/ProbeRTT (steady state)");
+ 
+ /* BBR has the following modes for deciding how fast to send: */
+ enum bbr_mode {
+@@ -940,17 +955,30 @@ static void bbr_update_min_rtt(struct sock *sk, const struct rate_sample *rs)
+ 	if (rs->delivered > 0)
+ 		bbr->idle_restart = 0;
+ }
+-static void bbr_fc_update_pacing_shift(struct sock *sk)
++
++/*
++ * BBR-TAS pacing shift selection.
++ * Unlike BBR-BVR's bbr_fc_update_pacing_shift(), this version:
++ *   (i)  reads the shift values from module parameters, so they can be
++ *        swept externally for the STARTUP x steady-state factorial
++ *        design (9/8/7 x 10/9/8), and
++ *   (ii) treats BBR_DRAIN the same as BBR_STARTUP, since DRAIN is still
++ *        part of the initial ramp-up window in which a larger TSQ
++ *        allowance helps frame aggregation rather than harming latency.
++ * ProbeBW gains, MIN_SEGS, and quantum computation are untouched.
++ */
++static void bbr_tas_update_pacing_shift(struct sock *sk)
+ {
+-    struct bbr *bbr = inet_csk_ca(sk);
++	struct bbr *bbr = inet_csk_ca(sk);
++	int shift;
+ 
+-    if (bbr->mode == BBR_STARTUP) {
+-        if (sk->sk_pacing_shift != BBR_FC_PACING_SHIFT_STARTUP)
+-            sk->sk_pacing_shift = BBR_FC_PACING_SHIFT_STARTUP;
+-    } else {
+-        if (sk->sk_pacing_shift != BBR_FC_PACING_SHIFT_STEADY)
+-            sk->sk_pacing_shift = BBR_FC_PACING_SHIFT_STEADY;
+-    }
++	if (bbr->mode == BBR_STARTUP || bbr->mode == BBR_DRAIN)
++		shift = tas_pacing_shift_startup;
++	else
++		shift = tas_pacing_shift_steady;
++
++	if (sk->sk_pacing_shift != shift)
++		sk->sk_pacing_shift = shift;
+ }
+ static void bbr_update_gains(struct sock *sk)
+ {
+@@ -2075,10 +2103,9 @@ static __bpf_kfunc void bbr_main(struct sock *sk, u32 ack, int flag,
+ 		bbr_update_model(sk, rs, &ctx);
+ 
+ 	bbr_update_gains(sk);
+-	bbr_fc_update_pacing_shift(sk);   /* transition shift after mode is resolved */
++	bbr_tas_update_pacing_shift(sk);  /* transition shift after mode is resolved */
+ 	bw = bbr_bw(sk);
+ 	bbr_set_pacing_rate(sk, bw, bbr->pacing_gain);
+-	
+ 	bbr_set_cwnd(sk, rs, rs->acked_sacked, bw, bbr->cwnd_gain,
+ 		     tcp_snd_cwnd(tp), &ctx);
+ 	bbr_bound_cwnd_for_inflight_model(sk);
+@@ -2135,7 +2162,7 @@ __bpf_kfunc static void bbr_init(struct sock *sk)
+ 	bbr->try_fast_path = 0;
+ 
+ 	cmpxchg(&sk->sk_pacing_status, SK_PACING_NONE, SK_PACING_NEEDED);
+-	bbr_fc_update_pacing_shift(sk);   /* set shift=9 for STARTUP at connection open */
++	bbr_tas_update_pacing_shift(sk);  /* set STARTUP shift at connection open */
+ 
+ 	/* Start sampling ECN mark rate after first full flight is ACKed: */
+ 	bbr->loss_round_delivered = tp->delivered + 1;
+@@ -2358,7 +2385,7 @@ __bpf_kfunc static void bbr_set_state(struct sock *sk, u8 new_state)
+ 
+ static struct tcp_congestion_ops tcp_bbr_cong_ops __read_mostly = {
+ 	.flags		= TCP_CONG_NON_RESTRICTED | TCP_CONG_WANTS_CE_EVENTS,
+-	.name		= "bvr",
++	.name		= "tas",
+ 	.owner		= THIS_MODULE,
+ 	.init		= bbr_init,
+ 	.cong_control	= bbr_main,

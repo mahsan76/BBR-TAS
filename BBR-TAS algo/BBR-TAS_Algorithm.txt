@@ -1,0 +1,22 @@
+Algorithm 1 BBR-TAS: TSQ-Adaptive Pacing Shift
+
+Input: TCP_SOCKET sk, int startup_shift, int steady_shift
+Output: updated TSQ limit enforced on socket sk
+
+1: state = get_bbr_state(sk)
+      // state is one of STARTUP, DRAIN, PROBE_BW, PROBE_RTT
+2: pacing_rate = get_bbr_pacing_rate(sk)
+3: if state equals STARTUP or state equals DRAIN then
+4:     shift = startup_shift
+5: else
+6:     shift = steady_shift
+7: end if
+8: dynamic_limit = pacing_rate right shift by shift bits
+      // corresponds to the amount of data transmittable
+      // in the time window set by shift, at the current
+      // paced rate
+9: min_limit = 2 times sk.pktsize
+10: limit = max(min_limit, dynamic_limit)
+11: limit = min(limit, tcp_limit_output_bytes)
+12: sk.tsq_limit = limit
+13: return sk.tsq_limit
