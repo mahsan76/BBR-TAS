@@ -1,0 +1,59 @@
+
+Summary of rrul test run from 2026-08-16 18:38:01
+  Title: 'bbrv3 rrul run 4'
+
+                                                avg       median       99th %          # data pts
+ Ping (ms) ICMP                      :        92.90       102.50       224.42 ms              350
+ Ping (ms) UDP BE                    :        95.09       104.72       257.83 ms              350
+ Ping (ms) UDP BK                    :        98.92       109.55       222.51 ms              350
+ Ping (ms) UDP EF                    :        91.23       102.85       218.74 ms              350
+ Ping (ms) avg                       :        94.53          N/A          N/A ms              350
+ TCP download BE                     :         1.84         1.38         7.87 Mbits/s         350
+ TCP download BK                     :         2.76         1.51        20.02 Mbits/s         350
+ TCP download CS5                    :         4.40         1.62        35.36 Mbits/s         350
+ TCP download EF                     :        39.35        27.83       253.94 Mbits/s         350
+ TCP download avg                    :        12.09          N/A          N/A Mbits/s         350
+ TCP download sum                    :        48.35          N/A          N/A Mbits/s         350
+ TCP totals                          :       308.12          N/A          N/A Mbits/s         350
+ TCP upload BE                       :        52.43        55.28        72.19 Mbits/s         350
+ TCP upload BE::tcp_bbr_bw           :       910.02       986.70      1744.73                 226
+ TCP upload BE::tcp_bbr_cwnd_gain    :         1.98         2.00         2.25                 226
+ TCP upload BE::tcp_bbr_mrtt         :         0.09         0.08         0.18                 226
+ TCP upload BE::tcp_bbr_pacing_gain  :         1.02         1.00         1.25                 226
+ TCP upload BE::tcp_cwnd             :       127.61       132.00       134.00                 226
+ TCP upload BE::tcp_delivery_rate    :       128.73        77.11       660.29                 226
+ TCP upload BE::tcp_pacing_rate      :       914.70       981.94      1727.28                 226
+ TCP upload BE::tcp_rtt              :         4.06         4.23         9.95                 226
+ TCP upload BE::tcp_rtt_var          :         0.27         0.20         1.17                 226
+ TCP upload BK                       :        66.82        69.50        98.47 Mbits/s         350
+ TCP upload BK::tcp_bbr_bw           :       869.54       892.89      1713.07                 226
+ TCP upload BK::tcp_bbr_cwnd_gain    :         1.97         2.00         2.25                 226
+ TCP upload BK::tcp_bbr_mrtt         :         0.08         0.08         0.12                 226
+ TCP upload BK::tcp_bbr_pacing_gain  :         1.01         1.00         1.25                 226
+ TCP upload BK::tcp_cwnd             :       127.57       132.00       134.00                 226
+ TCP upload BK::tcp_delivery_rate    :       143.48        91.51       857.53                 226
+ TCP upload BK::tcp_pacing_rate      :       869.53       887.50      1816.44                 226
+ TCP upload BK::tcp_rtt              :         3.88         4.14         9.16                 226
+ TCP upload BK::tcp_rtt_var          :         0.26         0.19         1.04                 226
+ TCP upload CS5                      :        85.45        88.59       126.21 Mbits/s         350
+ TCP upload CS5::tcp_bbr_bw          :      1122.37      1165.09      1822.68                 226
+ TCP upload CS5::tcp_bbr_cwnd_gain   :         1.97         2.00         2.25                 226
+ TCP upload CS5::tcp_bbr_mrtt        :         0.07         0.07         0.12                 226
+ TCP upload CS5::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 226
+ TCP upload CS5::tcp_cwnd            :       127.03       132.00       134.00                 226
+ TCP upload CS5::tcp_delivery_rate   :       187.24        96.76       994.22                 226
+ TCP upload CS5::tcp_pacing_rate     :      1128.10      1170.81      1828.17                 226
+ TCP upload CS5::tcp_rtt             :         3.66         3.55         9.79                 226
+ TCP upload CS5::tcp_rtt_var         :         0.25         0.16         1.29                 226
+ TCP upload EF                       :        55.07        57.37        79.21 Mbits/s         350
+ TCP upload EF::tcp_bbr_bw           :       965.37       998.29      1904.89                 226
+ TCP upload EF::tcp_bbr_cwnd_gain    :         1.98         2.00         2.25                 226
+ TCP upload EF::tcp_bbr_mrtt         :         0.07         0.07         0.09                 226
+ TCP upload EF::tcp_bbr_pacing_gain  :         1.02         1.00         1.25                 226
+ TCP upload EF::tcp_cwnd             :       127.62       132.00       134.00                 226
+ TCP upload EF::tcp_delivery_rate    :       163.98        78.75       947.74                 226
+ TCP upload EF::tcp_pacing_rate      :       969.14       991.62      1885.84                 226
+ TCP upload EF::tcp_rtt              :         3.58         3.70         9.18                 226
+ TCP upload EF::tcp_rtt_var          :         0.26         0.19         1.34                 226
+ TCP upload avg                      :        64.94          N/A          N/A Mbits/s         350
+ TCP upload sum                      :       259.77          N/A          N/A Mbits/s         350

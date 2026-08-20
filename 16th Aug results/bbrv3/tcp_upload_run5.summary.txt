@@ -1,0 +1,16 @@
+
+Summary of tcp_upload test run from 2026-08-16 18:39:19
+  Title: 'bbrv3 tcp_upload run 5'
+
+                                            avg       median       99th %          # data pts
+ Ping (ms) ICMP                  :        13.00        10.60        52.12 ms              350
+ TCP upload                      :       212.65       208.97       274.01 Mbits/s         350
+ TCP upload::tcp_bbr_bw          :       439.76       395.77      1320.83                 216
+ TCP upload::tcp_bbr_cwnd_gain   :         1.97         2.00         2.25                 216
+ TCP upload::tcp_bbr_mrtt        :         0.06         0.06         0.10                 216
+ TCP upload::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 216
+ TCP upload::tcp_cwnd            :       126.77       132.00       134.00                 216
+ TCP upload::tcp_delivery_rate   :       242.33       223.33       556.22                 216
+ TCP upload::tcp_pacing_rate     :       439.90       400.52      1307.62                 216
+ TCP upload::tcp_rtt             :         1.87         1.91         3.19                 216
+ TCP upload::tcp_rtt_var         :         0.18         0.17         0.43                 216

@@ -1,0 +1,49 @@
+
+Summary of tcp_4up test run from 2026-08-16 18:40:34
+  Title: 'bbrv3 tcp_4up run 5'
+
+                                               avg       median       99th %          # data pts
+ Ping (ms) ICMP                     :        17.90        17.10        52.12 ms              350
+ TCP upload avg                     :        64.28          N/A          N/A Mbits/s         350
+ TCP upload fairness                :         1.00          N/A          N/A Mbits/s         350
+ TCP upload sum                     :       257.12          N/A          N/A Mbits/s         350
+ TCP upload::1                      :        64.31        64.63        74.80 Mbits/s         350
+ TCP upload::1::tcp_bbr_bw          :       150.12       111.92       834.29                 236
+ TCP upload::1::tcp_bbr_cwnd_gain   :         1.96         2.00         2.25                 236
+ TCP upload::1::tcp_bbr_mrtt        :         0.14         0.11         0.31                 236
+ TCP upload::1::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 236
+ TCP upload::1::tcp_cwnd            :       126.10       132.00       134.00                 236
+ TCP upload::1::tcp_delivery_rate   :        77.85        73.69       154.00                 236
+ TCP upload::1::tcp_pacing_rate     :       149.74       111.11       825.94                 236
+ TCP upload::1::tcp_rtt             :         6.10         6.11        10.29                 236
+ TCP upload::1::tcp_rtt_var         :         0.22         0.17         0.83                 236
+ TCP upload::2                      :        64.24        64.54        75.78 Mbits/s         350
+ TCP upload::2::tcp_bbr_bw          :       145.03       111.21       789.50                 236
+ TCP upload::2::tcp_bbr_cwnd_gain   :         1.97         2.00         2.25                 236
+ TCP upload::2::tcp_bbr_mrtt        :         0.16         0.14         0.29                 236
+ TCP upload::2::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 236
+ TCP upload::2::tcp_cwnd            :       126.67       132.00       134.00                 236
+ TCP upload::2::tcp_delivery_rate   :        78.50        72.93       218.21                 236
+ TCP upload::2::tcp_pacing_rate     :       145.06       110.29       781.61                 236
+ TCP upload::2::tcp_rtt             :         6.08         6.15        10.05                 236
+ TCP upload::2::tcp_rtt_var         :         0.21         0.17         0.82                 236
+ TCP upload::3                      :        64.25        64.36        77.85 Mbits/s         350
+ TCP upload::3::tcp_bbr_bw          :       145.75       112.64       553.20                 236
+ TCP upload::3::tcp_bbr_cwnd_gain   :         1.97         2.00         2.25                 236
+ TCP upload::3::tcp_bbr_mrtt        :         0.20         0.19         0.34                 236
+ TCP upload::3::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 236
+ TCP upload::3::tcp_cwnd            :       126.66       132.00       134.00                 236
+ TCP upload::3::tcp_delivery_rate   :        76.22        73.34       156.22                 236
+ TCP upload::3::tcp_pacing_rate     :       145.79       112.36       547.67                 236
+ TCP upload::3::tcp_rtt             :         6.10         6.13        10.49                 236
+ TCP upload::3::tcp_rtt_var         :         0.21         0.16         0.76                 236
+ TCP upload::4                      :        64.32        64.28        76.64 Mbits/s         350
+ TCP upload::4::tcp_bbr_bw          :       162.51       110.89      1108.26                 236
+ TCP upload::4::tcp_bbr_cwnd_gain   :         1.97         2.00         2.25                 236
+ TCP upload::4::tcp_bbr_mrtt        :         0.17         0.16         0.32                 236
+ TCP upload::4::tcp_bbr_pacing_gain :         1.01         1.00         1.25                 236
+ TCP upload::4::tcp_cwnd            :       126.67       132.00       134.00                 236
+ TCP upload::4::tcp_delivery_rate   :        76.41        73.02       143.37                 236
+ TCP upload::4::tcp_pacing_rate     :       163.31       110.13      1172.68                 236
+ TCP upload::4::tcp_rtt             :         6.13         6.21        10.99                 236
+ TCP upload::4::tcp_rtt_var         :         0.21         0.17         0.72                 236
