@@ -1,0 +1,27 @@
+BBR-v3 internal-estimator bias check: shift7 vs shift10
+(skip_seconds=5.0; one data point per run = mean over that run's samples)
+
+shift7 per-run means:
+  shift7_run1.csv: mrtt_mean=0.1114 ms, bw_mean=767.89 Mbps, n_samples=1052
+  shift7_run2.csv: mrtt_mean=0.1147 ms, bw_mean=800.60 Mbps, n_samples=1068
+  shift7_run3.csv: mrtt_mean=0.1197 ms, bw_mean=764.35 Mbps, n_samples=1056
+  shift7_run4.csv: mrtt_mean=0.0781 ms, bw_mean=801.48 Mbps, n_samples=1066
+  shift7_run5.csv: mrtt_mean=0.0834 ms, bw_mean=767.97 Mbps, n_samples=1064
+
+shift10 per-run means:
+  shift10_run1.csv: mrtt_mean=0.1214 ms, bw_mean=799.16 Mbps, n_samples=1060
+  shift10_run2.csv: mrtt_mean=0.0957 ms, bw_mean=839.86 Mbps, n_samples=1072
+  shift10_run3.csv: mrtt_mean=0.1476 ms, bw_mean=779.85 Mbps, n_samples=1064
+  shift10_run4.csv: mrtt_mean=0.1158 ms, bw_mean=792.04 Mbps, n_samples=1052
+  shift10_run5.csv: mrtt_mean=0.0661 ms, bw_mean=793.51 Mbps, n_samples=1062
+
+--- Internal min-RTT estimate (BBR mrtt): shift7 (n=5) vs shift10 (n=5) ---
+shift7 mean = 0.101469, sd = 0.01921
+shift10 mean = 0.109321, sd = 0.03043
+Welch's t = -0.4880, two-tailed p = 0.641  (not significant at alpha=0.05)
+
+--- Internal bandwidth estimate (BBR bw): shift7 (n=5) vs shift10 (n=5) ---
+shift7 mean = 780.458, sd = 18.85
+shift10 mean = 800.883, sd = 22.9
+Welch's t = -1.5400, two-tailed p = 0.1635  (not significant at alpha=0.05)
+
